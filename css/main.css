@@ -1,0 +1,1400 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+:root {
+  --MyBGColor: #f9f9f9;
+  --MyRedColor: black;
+}
+
+body {
+  background: var(--MyBGColor);
+  margin: 0;
+  font-family: 'Poppins';
+}
+
+/*navigation bar*/
+.navbar {
+  z-index: 10000;
+  background-color: white;
+  padding: 1em 0;
+  height: 3.6vh;
+  position: fixed;
+  width: 100vw;
+  -webkit-box-shadow: 3px 3px 10px black;
+          box-shadow: 3px 3px 10px black;
+}
+
+.navbar .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.navbar .container .logo {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  font-size: 1.5em;
+  letter-spacing: 6px;
+}
+
+.navbar .container .logo span {
+  padding-left: 10px;
+  background-color: black;
+  color: white;
+}
+
+.navbar .container .nav-menu {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 60px;
+  top: 0;
+}
+
+.navbar .container .nav-menu li {
+  list-style: none;
+}
+
+.navbar .container .nav-menu li a {
+  color: black;
+  text-decoration: none;
+  font-size: 1.1em;
+  letter-spacing: 3px;
+  -webkit-transition: 0.7s ease;
+  transition: 0.7s ease;
+  line-height: 0.5em;
+}
+
+.navbar .container .nav-menu li a:hover {
+  color: crimson;
+}
+
+.navbar .container .cart-page {
+  position: fixed;
+  left: 65vw;
+  top: -100vh;
+  gap: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: white;
+  width: 35vw;
+  text-align: center;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  color: black;
+  margin: 0;
+  padding: 0;
+  height: 400px;
+  -webkit-box-shadow: 0px 0px 10px 10px;
+          box-shadow: 0px 0px 10px 10px;
+  border-radius: 5%;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.navbar .container .cart-page img {
+  height: 200px;
+  width: 250px;
+}
+
+.navbar .container .cart-page .text h1 {
+  font-size: 1em;
+}
+
+.navbar .container .cart-page .text p {
+  font-size: 0.5em;
+}
+
+.navbar .container .cart-page.is-active {
+  top: 65px;
+}
+
+.navbar .container .mobile-shopping {
+  position: relative;
+  cursor: pointer;
+  height: 2em;
+  width: 2em;
+  right: 2em;
+}
+
+.navbar .container .mobile-menu {
+  display: none;
+  position: relative;
+  cursor: pointer;
+  height: 2em;
+  width: 2em;
+  right: 10px;
+}
+
+/*Hero section or home page section*/
+#hero {
+  background-image: url(/images/3.jpeg);
+  background-size: 100% 100%;
+  background-position: top center;
+  position: relative;
+  z-index: 1;
+  height: 98vh;
+  border-bottom-style: groove;
+  border-bottom-width: 5px;
+  border-bottom-color: green;
+}
+
+#hero::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+#hero .hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 0;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+#hero h1 {
+  letter-spacing: 8px;
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 2rem;
+  position: relative;
+  color: transparent;
+  -webkit-animation: text_reveal 0.5s ease forwards;
+          animation: text_reveal 0.5s ease forwards;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+#hero h1:nth-child(1) {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+#hero h1:nth-child(2) {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+#hero h1:nth-child(3) {
+  -webkit-animation: text_reveal_name 0.5s ease forwards;
+          animation: text_reveal_name 0.5s ease forwards;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+#hero h1 span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: crimson;
+  -webkit-animation: text_reveal_box 1s ease;
+          animation: text_reveal_box 1s ease;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+#hero h1:nth-child(1) span {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+#hero h1:nth-child(2) span {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+
+#hero h1:nth-child(3) span {
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+}
+
+#hero .container {
+  min-height: 90vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.btn-decouvrir-plus {
+  border: 3em;
+  border-radius: 5em;
+  background-color: black;
+  height: 5vh;
+  width: 30vh;
+  position: absolute;
+  left: 40%;
+  top: 87%;
+  -webkit-box-shadow: 3px 3px 10px white;
+          box-shadow: 3px 3px 10px white;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  font-size: 1.3em;
+  padding-top: 0.8em;
+  cursor: pointer;
+}
+
+.btn-decouvrir-plus:hover {
+  height: 5.5vh;
+  font-size: 1.4em;
+  background-color: crimson;
+}
+
+/*About section*/
+.features-section {
+  background-color: white;
+  place-content: space-between;
+  height: 90vh;
+  margin: 0;
+  border-bottom-style: groove;
+  border-bottom-width: 5px;
+  border-bottom-color: green;
+}
+
+.features-section .photo-cedrick {
+  position: relative;
+  top: 3.5em;
+  left: 12.5vw;
+  height: 30vh;
+  width: 65vw;
+  border-radius: 1em;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  scroll-snap-align: start;
+  -webkit-box-shadow: 30px 30px 45px black;
+          box-shadow: 30px 30px 45px black;
+}
+
+.features-section .photo-cedrick img {
+  height: 30vh;
+  width: 65vw;
+  border-radius: 1em;
+}
+
+.features-section .text-about {
+  position: relative;
+  top: 2em;
+}
+
+.features-section .text-about p {
+  margin: 0.8em 2em;
+  letter-spacing: 4px;
+  text-align: center;
+}
+
+.features-section h1 {
+  padding: 0 0.3em;
+  letter-spacing: 2px;
+  font-size: 3em;
+  font-weight: small;
+  line-height: 1.2em;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.features-section .continuer-button {
+  position: relative;
+  top: 6em;
+  margin-top: 10px;
+  border-radius: 1em;
+  height: 20em;
+  width: 50vw;
+  left: 25vw;
+  overflow: hidden;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  font-size: 1.2em;
+  color: #f9f9f9;
+  text-decoration: none;
+  text-align: center;
+  padding: 0.3em 4em;
+  background-color: black;
+  border-style: none;
+  scroll-snap-align: start;
+  -webkit-box-shadow: 5px 5px 10px black;
+          box-shadow: 5px 5px 10px black;
+  font-size: large;
+  cursor: pointer;
+}
+
+.features-section .continuer-button:hover {
+  padding: 0.5em 4em;
+  font-size: 1.21em;
+  background: crimson;
+}
+
+/*specialties section*/
+.specialties-section {
+  background-color: white;
+  margin: 0;
+  padding: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 105vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  border-bottom-style: groove;
+  border-bottom-width: 5px;
+  border-bottom-color: green;
+}
+
+.specialties-section .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: scroll;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+}
+
+.specialties-section .title-specialties {
+  top: 0;
+  margin: 0;
+  font-size: 1.5em;
+  text-align: center;
+  line-height: 0em;
+  padding-bottom: 45px;
+  font-family: "Playfair Display", serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #111;
+}
+
+.specialties-section .title-specialties:before {
+  position: absolute;
+  left: 0;
+  bottom: 40px;
+  width: 60%;
+  left: 50%;
+  margin-left: -30%;
+  height: 1px;
+  content: "";
+  background-color: #777;
+  z-index: 4;
+}
+
+.specialties-section .title-specialties:after {
+  position: absolute;
+  width: 20px;
+  height: 30px;
+  left: 50%;
+  margin-left: -10px;
+  bottom: 32px;
+  content: '\00a7';
+  font-size: 20px;
+  line-height: 40px;
+  color: black;
+  font-weight: 400;
+  z-index: 5;
+  display: block;
+  background-color: white;
+}
+
+.specialties-section .specialties-section-paragraph {
+  position: absolute;
+  top: 7em;
+  margin: 1em 4em;
+  letter-spacing: 3px;
+  font-size: small;
+}
+
+.specialties-section .specialties-section-paragraph span {
+  float: left;
+  font-weight: bold;
+  font-size: 60px;
+  font-size: 6rem;
+  line-height: 40px;
+  line-height: 4rem;
+  height: 4rem;
+}
+
+.specialties-section .card {
+  position: relative;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  scroll-snap-align: start;
+  height: 500px;
+  margin: 20px;
+  -webkit-box-shadow: 5px 5px 20px black;
+          box-shadow: 5px 5px 20px black;
+  overflow: hidden;
+}
+
+.specialties-section img {
+  height: 500px;
+  width: 350px;
+  border-radius: 3px;
+}
+
+.specialties-section .intro {
+  height: 70px;
+  width: 350px;
+  padding: 6px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  top: 430px;
+  position: absolute;
+  background: rgba(27, 27, 27, 0.5);
+  color: white;
+  -webkit-transition: .8s;
+  transition: .8s;
+  overflow-y: scroll;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+}
+
+.specialties-section h2 {
+  margin: 10px;
+  font-size: 40px;
+  font-size: 1.5em;
+  letter-spacing: 5px;
+}
+
+.specialties-section p {
+  font-size: 1em;
+  color: black;
+  margin: 20px;
+  opacity: 0;
+  visibility: hidden;
+  letter-spacing: 3px;
+}
+
+.specialties-section .title-specialties {
+  position: absolute;
+  top: 0;
+}
+
+.specialties-section .card:hover {
+  cursor: pointer;
+}
+
+.specialties-section .card:hover {
+  cursor: pointer;
+}
+
+.specialties-section .card:hover .intro {
+  height: 220px;
+  top: 300px;
+  background: black;
+}
+
+.specialties-section .card:hover p {
+  opacity: 1;
+  visibility: visible;
+  color: #f9f9f9;
+}
+
+.specialties-section .card:hover img {
+  -webkit-transform: scale(1.1) rotate(-3deg);
+          transform: scale(1.1) rotate(-3deg);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 6px;
+}
+
+/*customise scroll bars*/
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px grey;
+          box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000;
+}
+
+/*recettes-section*/
+.recettes-section {
+  background-color: white;
+  margin: 0;
+  padding: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 92vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  border-bottom-style: groove;
+  border-bottom-width: 5px;
+  border-bottom-color: green;
+}
+
+.recettes-section .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: scroll;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+}
+
+.recettes-section .container .title-recette {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  font-size: 1em;
+  text-align: center;
+  line-height: 0em;
+  padding-bottom: 45px;
+  font-family: "Playfair Display", serif;
+  letter-spacing: 2px;
+  color: #111;
+}
+
+.recettes-section .container .title-recette:before {
+  position: absolute;
+  left: 0;
+  bottom: 40px;
+  width: 60%;
+  left: 50%;
+  margin-left: -30%;
+  height: 1px;
+  content: "";
+  background-color: #777;
+  z-index: 4;
+}
+
+.recettes-section .container .title-recette:after {
+  position: absolute;
+  width: 20px;
+  height: 30px;
+  left: 50%;
+  margin-left: -10px;
+  bottom: 32px;
+  content: '\00a7';
+  font-size: 20px;
+  line-height: 40px;
+  color: black;
+  font-weight: 400;
+  z-index: 5;
+  display: block;
+  background-color: white;
+}
+
+.recettes-section .container .recette-section-paragraph {
+  position: absolute;
+  top: 7em;
+  margin: 1em 4em;
+  letter-spacing: 3px;
+  font-size: small;
+}
+
+.recettes-section .container .recette-section-paragraph span {
+  float: left;
+  font-weight: bold;
+  font-size: 60px;
+  font-size: 6rem;
+  line-height: 40px;
+  line-height: 4rem;
+  height: 4rem;
+}
+
+.recettes-section .container .recette .recette-card {
+  position: relative;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  scroll-snap-align: start;
+  height: 350px;
+  margin: 20px;
+  -webkit-box-shadow: 5px 5px 20px black;
+          box-shadow: 5px 5px 20px black;
+  overflow: hidden;
+}
+
+.recettes-section .container .recette .recette-card img {
+  height: 350px;
+  width: 300px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.recettes-section .container .recette .recette-card img:hover {
+  -webkit-transform: scale(1.1) rotate(-3deg);
+          transform: scale(1.1) rotate(-3deg);
+}
+
+.recettes-section .container .recette .recette-card .title {
+  height: 50px;
+  width: 300px;
+  position: absolute;
+  background-color: rgba(27, 27, 27, 0.8);
+  bottom: 0;
+}
+
+.recettes-section .container .recette .recette-card .title h2 {
+  color: white;
+  font-size: 1.5em;
+  opacity: 50;
+  text-align: center;
+  line-height: 0em;
+  padding-bottom: 45px;
+  font-family: "Playfair Display", serif;
+  letter-spacing: 2px;
+}
+
+.recettes-section .container .recette .recette-card .title:hover {
+  background-color: black;
+}
+
+.recettes-section .container .recette .recette-card .title:hover h2 {
+  font-size: 1.6em;
+}
+
+.recettes-section .container .recette .recette-page {
+  z-index: 5;
+  position: absolute;
+  display: block;
+  background-color: #111;
+  height: 82vh;
+  width: 85vw;
+  top: 0;
+  left: 0;
+  color: white;
+  padding: 1em;
+  overflow-y: scroll;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+  -webkit-box-shadow: 10px 10px 20px  black;
+          box-shadow: 10px 10px 20px  black;
+}
+
+.recettes-section .container .recette .recette-page .page-title img {
+  cursor: pointer;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 80vw;
+  margin: 0;
+  padding: 0;
+  height: 50px;
+  width: 50px;
+}
+
+.recettes-section .container .recette .recette-page .page-title img:hover {
+  background-color: #777;
+  height: 55px;
+  width: 55px;
+}
+
+.recettes-section .container .recette .recette-page h1 {
+  margin: 0;
+  color: white;
+  letter-spacing: 3px;
+}
+
+.recettes-section .container .recette .recette-page img {
+  height: 200px;
+  width: 200px;
+  -webkit-box-shadow: 10px 10px 20px  white;
+          box-shadow: 10px 10px 20px  white;
+}
+
+.recettes-section .container .recette .recette-page h2 {
+  letter-spacing: 3px;
+}
+
+.recettes-section .container .recette .recette-page video {
+  height: auto;
+  width: 300px;
+}
+
+.recettes-section .container .recette .recette-page1 {
+  left: -100%;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.recettes-section .container .recette .recette-page2 {
+  left: -100%;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.recettes-section .container .recette .recette-page3 {
+  left: -100%;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.recettes-section .container .recette .recette-page4 {
+  left: -100%;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.recettes-section .container .recette .recette-page1.is-active {
+  left: 0;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.recettes-section .container .recette .recette-page2.is-active {
+  left: 0;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.recettes-section .container .recette .recette-page3.is-active {
+  left: 0;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.recettes-section .container .recette .recette-page4.is-active {
+  left: 0;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+/*food-info section*/
+.food-info-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0px;
+  border-bottom-style: groove;
+  border-bottom-width: 5px;
+  border-bottom-color: green;
+  position: relative;
+}
+
+.food-info-section .container .food-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.food-info-section .container .title-food-section {
+  position: absolute;
+  top: 0;
+  margin: 0;
+  font-size: 1em;
+  line-height: em;
+  padding-bottom: 45px;
+  font-family: "Playfair Display", serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #111;
+}
+
+.food-info-section .container .title-food-section:before {
+  position: absolute;
+  left: 0;
+  bottom: 40px;
+  width: 60%;
+  left: 50%;
+  margin-left: -30%;
+  height: 1px;
+  content: "";
+  background-color: #777;
+  z-index: 4;
+}
+
+.food-info-section .container .title-food-section:after {
+  position: absolute;
+  width: 20px;
+  height: 30px;
+  left: 50%;
+  margin-left: -10px;
+  bottom: 32px;
+  content: '\00a7';
+  font-size: 20px;
+  line-height: 40px;
+  color: black;
+  font-weight: 400;
+  z-index: 5;
+  display: block;
+  background-color: white;
+}
+
+.food-info-section .container .text {
+  height: 30vh;
+  width: 50vw;
+  background-color: beige;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  scroll-snap-align: start;
+  -webkit-box-shadow: 5px 5px 20px black;
+          box-shadow: 5px 5px 20px black;
+  overflow: hidden;
+}
+
+.food-info-section .container .food-image img {
+  height: 30vh;
+  width: 50vw;
+}
+
+.food-info-section .container .food-info-paragraph {
+  margin-top: 10em;
+  margin: 3em;
+  margin-top: 8em;
+  margin-bottom: 6em;
+  padding: 0 3em;
+  border-style: none;
+  border-radius: 3em;
+  scroll-snap-align: start;
+  -webkit-box-shadow: 2px 2px 2px black;
+          box-shadow: 2px 2px 2px black;
+}
+
+.food-info-section .container .food-info-paragraph p {
+  letter-spacing: 3px;
+}
+
+.food-info-section .container .food-info-paragraph span {
+  float: left;
+  font-weight: bold;
+  font-size: 60px;
+  font-size: 6rem;
+  line-height: 40px;
+  line-height: 4rem;
+  height: 4rem;
+}
+
+.food-info-section .food-image:hover {
+  cursor: pointer;
+}
+
+.food-info-section .food-image:hover {
+  cursor: pointer;
+}
+
+.food-info-section .food-image:hover {
+  height: 220px;
+  top: 300px;
+  background: black;
+}
+
+.food-info-section .food-image:hover img {
+  -webkit-transform: scale(1.1) rotate(-3deg);
+          transform: scale(1.1) rotate(-3deg);
+}
+
+/*contact section*/
+.contact-section {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 90vh;
+  margin: 0;
+  padding: 0px;
+  background-color: white;
+  border-bottom-style: groove;
+  border-bottom-width: 5px;
+  border-bottom-color: green;
+}
+
+.contact-section .container .contact-section-title {
+  position: absolute;
+  top: 0;
+  margin: 0;
+  font-size: 1.5em;
+  text-align: center;
+  line-height: 0em;
+  padding-bottom: 45px;
+  font-family: "Playfair Display", serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #111;
+}
+
+.contact-section .container .contact-section-title:before {
+  position: absolute;
+  left: 0;
+  bottom: 40px;
+  width: 60%;
+  left: 50%;
+  margin-left: -30%;
+  height: 1px;
+  content: "";
+  background-color: #777;
+  z-index: 4;
+}
+
+.contact-section .container .contact-section-title:after {
+  position: absolute;
+  width: 20px;
+  height: 30px;
+  left: 50%;
+  margin-left: -10px;
+  bottom: 32px;
+  content: '\00a7';
+  font-size: 20px;
+  line-height: 40px;
+  color: black;
+  font-weight: 400;
+  z-index: 5;
+  display: block;
+  background-color: white;
+}
+
+.contact-section .container .contact-top {
+  margin-top: 8em;
+  height: 50vh;
+  margin-left: 5em;
+  font-weight: 400;
+  background-color: white;
+}
+
+.contact-section .container .contact-top .name {
+  margin-top: 10px;
+  width: 60vw;
+  background-color: white;
+  color: black;
+  letter-spacing: 1px;
+  height: 1.8em;
+  border-color: black;
+  border-style: dotted;
+  -webkit-box-shadow: 5px 5px 10px black;
+          box-shadow: 5px 5px 10px black;
+}
+
+.contact-section .container .contact-top .email {
+  margin-top: 10px;
+  width: 60vw;
+  background-color: white;
+  color: black;
+  letter-spacing: 1px;
+  height: 1.8em;
+  border-color: black;
+  border-style: dotted;
+  -webkit-box-shadow: 5px 5px 10px black;
+          box-shadow: 5px 5px 10px black;
+}
+
+.contact-section .container .contact-top .message {
+  margin-top: 10px;
+  width: 60vw;
+  background-color: black;
+  color: white;
+  letter-spacing: 1px;
+  border-color: white;
+  border-style: dotted;
+  -webkit-box-shadow: 5px 5px 10px black;
+          box-shadow: 5px 5px 10px black;
+}
+
+.contact-section .container .contact-top .send-message-cta {
+  margin-top: 10px;
+  border-radius: 1em;
+  height: 40px;
+  width: 60vw;
+  overflow: hidden;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  font-size: 1.2em;
+  color: #f9f9f9;
+  background-color: black;
+  border-style: none;
+  scroll-snap-align: start;
+  -webkit-box-shadow: 5px 5px 10px black;
+          box-shadow: 5px 5px 10px black;
+  cursor: pointer;
+}
+
+.contact-section .container .contact-top .send-message-cta:hover {
+  height: 43px;
+  top: 61vh;
+  background: crimson;
+}
+
+.contact-section .container .contact-bottom {
+  height: 26vh;
+  background-color: black;
+}
+
+.contact-section .container .contact-bottom .address {
+  padding-top: 1em;
+}
+
+.contact-section .container .contact-bottom .address a {
+  color: white;
+  text-decoration: none;
+  letter-spacing: 4px;
+  font-size: 0.8em;
+}
+
+.contact-section .container .contact-bottom .address a:hover {
+  color: crimson;
+}
+
+.contact-section .container .contact-bottom .address img {
+  height: 1.7em;
+  width: 1.7em;
+}
+
+.contact-section .container .contact-bottom .separation-line {
+  position: absolute;
+  margin-top: 1em;
+  background-color: white;
+  height: 1px;
+  width: 90vw;
+  margin-left: 5vw;
+}
+
+.contact-section .container .contact-bottom img {
+  height: 2em;
+  width: 2em;
+  padding-right: 1em;
+  cursor: pointer;
+}
+
+.contact-section .container .contact-bottom .social-media-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 3em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contact-section .container .contact-bottom .rights-section {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contact-section .container .contact-bottom .rights-section h4 {
+  position: relative;
+  top: 0em;
+  font-size: 0.7em;
+  font-weight: 100;
+  color: white;
+  letter-spacing: 4px;
+}
+
+.contact-section .container .contact-bottom .rights-section span {
+  color: orange;
+}
+
+/* Keyframes */
+@-webkit-keyframes text_reveal_box {
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+@keyframes text_reveal_box {
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+
+@-webkit-keyframes text_reveal {
+  100% {
+    color: white;
+  }
+}
+
+@keyframes text_reveal {
+  100% {
+    color: white;
+  }
+}
+
+@-webkit-keyframes text_reveal_name {
+  100% {
+    background-color: #f9f9f9;
+    color: black;
+    font-weight: 700;
+    -webkit-box-shadow: 3px 3px 10px white;
+            box-shadow: 3px 3px 10px white;
+  }
+}
+
+@keyframes text_reveal_name {
+  100% {
+    background-color: #f9f9f9;
+    color: black;
+    font-weight: 700;
+    -webkit-box-shadow: 3px 3px 10px white;
+            box-shadow: 3px 3px 10px white;
+  }
+}
+
+/* Make the website full responsive */
+@media (max-width: 1350px) {
+  .navbar {
+    position: fixed;
+    z-index: 1000;
+  }
+  .navbar .container .mobile-menu {
+    position: relative;
+    display: block;
+  }
+  .navbar .container .mobile-menu.is-active {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  .navbar .container .mobile-shopping {
+    position: relative;
+    right: 2em;
+  }
+  .navbar .container .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    gap: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-color: black;
+    width: 100%;
+    text-align: center;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    color: white;
+    margin: 0;
+    padding: 0;
+    height: 50vh;
+  }
+  .navbar .container .nav-menu .nav-item {
+    margin-top: 1em;
+    text-align: center;
+    height: 10vh;
+  }
+  .navbar .container .nav-menu .nav-item a {
+    color: white;
+  }
+  .navbar .container .nav-menu.is-active {
+    left: 0;
+  }
+  .navbar .container .cart-page {
+    width: 80vw;
+    left: 10vw;
+  }
+  .navbar .container .mobile-shopping.is-active {
+    background-color: black;
+  }
+  .navbar .container .cart-page.is-active {
+    top: 65px;
+  }
+}
+
+@media (min-width: 720px) {
+  #hero {
+    background-image: url(/images/Logo.PNG);
+  }
+  #hero .container {
+    right: 60vw;
+  }
+  #hero .container .left-col-hme h1 {
+    font-size: 3em;
+  }
+  #hero .btn-decouvrir-plus {
+    height: 2em;
+    width: 25vw;
+    cursor: pointer;
+  }
+  #about-section {
+    width: 100vw;
+    height: 100vh;
+  }
+  #about-section .container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+  }
+  #about-section .container .text-about {
+    position: absolute;
+    width: 50vw;
+    right: 0;
+    top: 13em;
+    padding-left: 50em;
+  }
+  #about-section .container .text-about h1 {
+    margin-left: 1em;
+    margin-right: 0;
+    font-size: 4em;
+  }
+  #about-section .container .text-about p {
+    font-size: 1.5em;
+  }
+  #about-section .container .photo-cedrick {
+    top: 22vh;
+    left: 5vw;
+    position: absolute;
+    width: 40vw;
+    height: 60vh;
+  }
+  #about-section .container .photo-cedrick img {
+    width: 40vw;
+    height: 60vh;
+  }
+  #about-section .container .continuer-button {
+    display: none;
+    position: relative;
+    right: 10em;
+    bottom: 5vh;
+  }
+  #specialties-section .container .title-specialties {
+    font-size: 2em;
+  }
+  #specialties-section .container .specialties-section-paragraph {
+    width: 40vw;
+    right: 30vw;
+    font-size: 1em;
+  }
+  #recettes-section .container .title-recette {
+    font-size: 2em;
+  }
+  #recettes-section .container .recette-section-paragraph {
+    width: 40vw;
+    right: 30vw;
+    font-size: 1em;
+  }
+  #recettes-section .container .recette .recette-page {
+    width: 50vw;
+  }
+  #recettes-section .container .recette .recette-page .page-title img {
+    left: 46vw;
+  }
+  #food-info-section .container .title-food-section {
+    font-size: 2em;
+  }
+  #food-info-section .container .food-info-paragraph {
+    width: 40vw;
+    font-size: 1.2em;
+    left: 50vw;
+    margin-left: 25vw;
+    padding: 1em;
+    line-height: 1.8em;
+  }
+  #food-info-section .container .food-container {
+    margin: 0 15vw;
+    height: 45vh;
+  }
+  #food-info-section .container .food-container .food-image {
+    height: 40vh;
+    width: 35vw;
+  }
+  #food-info-section .container .food-container .food-image img {
+    height: 45vh;
+    width: 35vw;
+  }
+  #food-info-section .container .food-container .text {
+    height: 45vh;
+    font-size: 1.3em;
+    width: 35vw;
+  }
+  #food-info-section .container .food8 {
+    margin-bottom: 10vh;
+  }
+  #contact-section .container .contact-section-title {
+    font-size: 2em;
+  }
+  #contact-section .container .contact-top form {
+    width: 40vw;
+    padding-right: 30vw;
+    margin-left: 23vw;
+  }
+  #contact-section .container .contact-top form #name {
+    width: 40vw;
+    height: 2.5em;
+    font-size: 1.1em;
+  }
+  #contact-section .container .contact-top form #email {
+    width: 40vw;
+    height: 2.5em;
+    font-size: 1.1em;
+  }
+  #contact-section .container .contact-top form #message {
+    width: 40vw;
+    height: 25vh;
+  }
+  #contact-section .container .contact-top form #send-button {
+    width: 20vw;
+    margin-left: 10vw;
+    height: 2.5em;
+  }
+  #contact-section .container .contact-bottom {
+    width: 100vw;
+  }
+  #contact-section .container .contact-bottom .address {
+    padding-left: 4vw;
+  }
+}
+
+@media (min-width: 1100px) {
+  #recettes-section .container .recette .recette-page {
+    width: 30vw;
+  }
+  #recettes-section .container .recette .recette-page .page-title img {
+    left: 28vw;
+  }
+}
+/*# sourceMappingURL=main.css.map */
